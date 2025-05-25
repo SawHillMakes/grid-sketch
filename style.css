@@ -18,6 +18,11 @@ body
     flex-direction: column;
 }
 
+.btnContainer
+{
+    display: flex;
+    gap: 10px;
+}
 
 .gridContainer
 {
