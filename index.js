@@ -1,28 +1,57 @@
 const gridContainer = document.querySelector(".gridContainer");
 
-function createGrid (sizeOfGrid)
+let userInput = prompt("Enter a number from 1-100");
+
+while(userInput > 100 || userInput < 1)
 {
-    let rowContainer = document.createElement("div");
-    rowContainer.classList.add("rowContainer");
-    rowContainer.textContent = "";
-    gridContainer.appendChild(rowContainer);
-    for(let i = 0; i < sizeOfGrid; i++)
+    userInput = prompt("Incorrect input! Enter a number from 1-100");
+
+}
+
+function createColumns (numOfColumns)
+{
+    let columnContainer = document.createElement("div");
+    columnContainer.classList.add("columnContainer");
+    columnContainer.textContent = "";
+    gridContainer.appendChild(columnContainer);
+
+    for(let i = 0; i < numOfColumns; i++)
     {
         let smallDiv = document.createElement("div");
         smallDiv.textContent = "";
-        smallDiv.classList = "smallDiv"
-        rowContainer.appendChild(smallDiv);
+        smallDiv.classList = "smallDiv";
+        columnContainer.appendChild(smallDiv);
     }
 }
 
 
 
-function creatingColumn(numOfColumns)
+function createGrid(sizeOfGrid)
 {
-    for(let i = 0; i < numOfColumns; i++)
+    for(let i = 0; i < sizeOfGrid; i++)
     {
-        createGrid(numOfColumns);
+        createColumns(sizeOfGrid);
     }
 }
 
-creatingColumn(66);
+createGrid(userInput);
+
+
+
+const resizeBtn = document.createElement("button");
+resizeBtn.textContent = "Resize Grid";
+document.body.appendChild(resizeBtn);
+
+resizeBtn.addEventListener("click", () =>
+{
+    let userInput = prompt("Enter a number from 1-100");
+    while(userInput > 100 || userInput < 1)
+        {
+            userInput = prompt("Incorrect input! Enter a number from 1-100");
+        
+        }
+    gridContainer.innerHTML = "";
+    createGrid(userInput);
+}
+)
+
