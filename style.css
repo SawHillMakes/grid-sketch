@@ -16,12 +16,14 @@ body
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 40px;
+    background-color: rgb(25, 37, 105);
 }
 
 .btnContainer
 {
     display: flex;
-    gap: 10px;
+    gap: 30px;
 }
 
 .gridContainer
@@ -29,8 +31,9 @@ body
     display: flex;
     border: 2px solid black;
     border-radius: 5px;
-    height: 60%;
+    height: 65%;
     width: 40%;
+    box-shadow: 3px 3px 18px white;
 }
 
 .smallDiv
@@ -47,8 +50,43 @@ body
     flex: 1;
     flex-direction: column;
 }
-:hover.smallDiv
+
+button
 {
-    background-color:peachpuff;
+    padding-inline: 20px;
+    padding-block: 10px;
+    transition-duration: 0.2s;
+    border: 0;
+    font-size: large;
+    font-weight: 400;
+    border-radius: 3px;
+    margin-bottom: 100px;
+}
+.btn {
+    padding-inline: 34px;
+    padding-block: 16px;
+    transition: all 0.2s ease;
 }
 
+.btn:hover
+{
+    background-color: #89a8c4;
+    color: white;    
+    padding-inline: 34px;
+    padding-block: 16px;
+    box-shadow: 1px 1px 8px white;
+
+}
+
+.imageContainer
+{
+    height: 200px;
+    width: 200px;
+}
+
+
+img
+{
+    height: 200px;
+    width: 400px;
+}

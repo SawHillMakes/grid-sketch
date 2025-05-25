@@ -1,8 +1,9 @@
 const gridContainer = document.querySelector(".gridContainer");
 
+let smallDiv = document.createElement("div");
+
 let userInput = 30;
 let clearBtnSize = userInput;
-
 function createColumns (numOfColumns)
 {
     let columnContainer = document.createElement("div");
@@ -14,20 +15,14 @@ function createColumns (numOfColumns)
     {
         let smallDiv = document.createElement("div");
         smallDiv.textContent = "";
-        smallDiv.classList = "smallDiv";
+        smallDiv.classList.add("smallDiv")
         columnContainer.appendChild(smallDiv);
-
-        
-        smallDiv.addEventListener("mouseenter",()=>        //change div color when mouse enters
+        smallDiv.addEventListener("mouseenter", ()=>
         {
             smallDiv.style.cssText = "background-color:black;";
         })
-        
-
     }
 }
-
-
 
 function createGrid(sizeOfGrid)
 {
@@ -44,6 +39,7 @@ btnContainer.classList.add("btnContainer");
 document.body.appendChild(btnContainer);
 
 const resizeBtn = document.createElement("button");
+resizeBtn.classList.add("btn");
 resizeBtn.textContent = "Resize Grid";
 btnContainer.appendChild(resizeBtn);
 
@@ -61,13 +57,9 @@ resizeBtn.addEventListener("click", () =>
 }
 )
 
-const rainbowBtn = document.createElement("button");
-rainbowBtn.classList.add("rainbowBtn");
-btnContainer.appendChild(rainbowBtn);
-rainbowBtn.textContent = "Random Colors";
 
 const clearGridBtn = document.createElement("button");
-clearGridBtn.classList.add("clearGridBtn");
+clearGridBtn.classList.add("btn");
 btnContainer.appendChild(clearGridBtn);
 clearGridBtn.textContent = "Clear Grid";
 
@@ -76,3 +68,4 @@ clearGridBtn.addEventListener("click", ()=>
     gridContainer.innerHTML = "";
     createGrid(clearBtnSize);
 })
+
